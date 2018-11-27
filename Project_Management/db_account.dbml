@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ProjectManagement" Class="db_accountDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\ProjectManagement.mdf;Integrated Security=True" SettingsObjectName="Project_Management.Properties.Settings" SettingsPropertyName="ProjectManagementConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tb_account" Member="tb_accounts">
+    <Type Name="tb_account">
+      <Column Name="ac_serial" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ac_name" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ac_email" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ac_username" Type="System.String" DbType="VarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ac_password" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_section" Member="tb_sections">
+    <Type Name="tb_section">
+      <Column Name="serial" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sec_st_name" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="sec_st_id" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sec_st_section" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sec_semester" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sec_inGroup" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sec_subject" Type="System.String" DbType="VarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sec_username" Type="System.String" DbType="VarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_group" Member="tb_groups">
+    <Type Name="tb_group">
+      <Column Name="grp_groupNumber" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="grp_groupName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="grp_projectTitle" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="grp_NumberOfMember" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="grp_semester" Type="System.String" DbType="VarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="grp_subject" Type="System.String" DbType="VarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="grp_userName" Type="System.String" DbType="VarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_groupMember" Member="tb_groupMembers">
+    <Type Name="tb_groupMember">
+      <Column Name="grpm_serial" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="grpm_stdName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="grpm_stdId" Type="System.String" DbType="VarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="grpm_section" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="grpm_stdPart" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="grpm_stdMark" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="grpm_groupNumber" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="grpm_subject" Type="System.String" DbType="VarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="grpm_semester" Type="System.String" DbType="VarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="grpm_username" Type="System.String" DbType="VarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
